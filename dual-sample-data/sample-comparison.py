@@ -19,6 +19,8 @@ from sklearn.metrics import confusion_matrix
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 
+from sklearn.linear_model import LinearRegression
+
 # Data + Data Check
 penguins = pd.read_csv("penguins.csv")
 print(penguins.head())
@@ -317,7 +319,18 @@ target_test_pred = knn.predict(pred_test[final_vars])
 cm = confusion_matrix(target_test, target_test_pred)
 print(cm, knn.score(pred_test[final_vars], target_test))
 
-#plot the knn graph
+# plot the knn graph
 plot_regions(knn, pred_test[['bill_length_mm', 'bill_depth_mm']], target_test_dc)
 plt.savefig("decision_regions_knn.png")
 plt.close()
+
+# Notes for the future below
+"""
+NOTES:
+- This is a very good resource, as a file.
+    * density_plot, correlation_matrix, best_(val), and finally decision_region plots/graphs are perfect for this
+    * Use this knowledge to create a Linear Regression model in a different, more focused project
+- There are some warnings in this file, but I'm pretty sure that's fine.
+- Nice brought up possible issues with using .dropna() to get rid of null entries, just keep in the back of your mind
+- 
+"""
