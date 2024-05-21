@@ -29,7 +29,7 @@ print(penguins.shape)
 # Remove column "sex"
 print()
 penguins = penguins.drop("sex", axis=1)
-penguins = penguins.drop("rowid", axis = 1)
+penguins = penguins.drop("rowid", axis=1)
 print(penguins.head())
 
 # Plot (?)
@@ -45,7 +45,7 @@ plt.close()
 
 # Split data into training and testing
 print()
-np.random.seed(1128) # (?)
+np.random.seed(1128) # Consistency
 train, test = train_test_split(penguins,test_size=.20)
 
 ##
@@ -334,3 +334,9 @@ NOTES:
 - Nice brought up possible issues with using .dropna() to get rid of null entries, just keep in the back of your mind
 - 
 """
+
+# LINEAR REGRESSION #
+from sklearn.linear_model import LinearRegression
+
+LRM = LinearRegression()
+# LRM.fit(pred_train[num_vars], target_train)
