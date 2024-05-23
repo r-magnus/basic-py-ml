@@ -1,6 +1,12 @@
 # File for comparing with coworker's work in R Studio
 # Ryan Magnuson rmagnuson@westmont.edu
 
+# Warning Suppression
+def warn(*args, **kwargs): # @Override
+    pass # suppression
+import warnings
+warnings.warn = warn
+
 # Setup
 import pandas as pd
 from matplotlib import pyplot as plt
